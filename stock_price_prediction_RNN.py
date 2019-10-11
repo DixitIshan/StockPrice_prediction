@@ -78,8 +78,6 @@ X_test, y_test = to_1dimension(test, TIME_AHEAD)
 print(X_train.shape, y_train.shape)
 print(X_test.shape, y_test.shape)
 
-################# LSTM #################
-
 def create_symbol(model_name='LSTM', units=10, activation='linear', time_ahead=1):
     model = Sequential()
     if model_name == 'LSTM':
@@ -94,6 +92,7 @@ def create_symbol(model_name='LSTM', units=10, activation='linear', time_ahead=1
     model.add(Activation('linear'))
     return model
 
+################# LSTM #################
 model = create_symbol(model_name='LSTM', units=UNITS, time_ahead=TIME_AHEAD)
 model.compile(optimizer='adam', loss='mean_squared_error')
 
